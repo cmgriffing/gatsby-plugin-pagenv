@@ -19,13 +19,13 @@ Overview of Steps:
 #### Install Plugin as Dependency
 
 ```
-npm install -D gatsby-plugin-env-variable-injector
+npm install -D gatsby-plugin-pagenv
 ```
 
 or
 
 ```
-yarn add -D gatsby-plugin-env-variable-injector
+yarn add -D gatsby-plugin-pagenv
 ```
 
 #### Create .env Files
