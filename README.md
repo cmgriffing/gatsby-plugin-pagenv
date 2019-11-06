@@ -59,19 +59,16 @@ MY_ENV_VAR=stagingValue
 
 #### Modify/Create pageQuery
 
-There are several important things to take note of.
-
-First, add a label to the query and make it unique:
-
-```graphql
-query InjectEnvIntoIndex
-```
+There are a couple important things to take note of.
 
 You will pass the env variables you allowed into the query with a type annotation:
 
 ```graphql
-($INDEX_LOGO_IMAGE: String!)
+query ($INDEX_LOGO_IMAGE: String!)
 ```
+
+You can find out more about GraphQL types here:
+[https://graphql.org/learn/schema/#scalar-types](https://graphql.org/learn/schema/#scalar-types)
 
 Lastly, use the variable in your query somewhere:
 
@@ -79,11 +76,11 @@ Lastly, use the variable in your query somewhere:
 (relativePath: { eq: $INDEX_LOGO_IMAGE }) {
 ```
 
-When you put it all together, it will look something like this:
+When you put them together, it will look something like this:
 
 ```graphql
 export const pageQuery = graphql`
-  query InjectEnvIntoIndex($INDEX_LOGO_IMAGE: String!) {
+  query ($INDEX_LOGO_IMAGE: String!) {
     newPlaceholderImage: file(relativePath: { eq: $INDEX_LOGO_IMAGE }) {
       childImageSharp {
         fluid(maxWidth: 300) {

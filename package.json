@@ -2,7 +2,7 @@
   "name": "gatsby-plugin-pagenv",
   "description": "Inject ENV Vars into Gatsby pageQueries at build time.",
   "author": "Chris Griffing <cmgriffing@gmail.com> (http://chrisgriffing.com)",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "keywords": [
     "gatsby",

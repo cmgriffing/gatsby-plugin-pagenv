@@ -27,7 +27,7 @@ const IndexPage = ({ data }) => (
 export default IndexPage
 
 export const pageQuery = graphql`
-  query InjectEnvIntoIndex($INDEX_LOGO_IMAGE: String!) {
+  query($INDEX_LOGO_IMAGE: String!) {
     newPlaceholderImage: file(relativePath: { eq: $INDEX_LOGO_IMAGE }) {
       childImageSharp {
         fluid(maxWidth: 300) {
