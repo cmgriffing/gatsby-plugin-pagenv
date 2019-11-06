@@ -18,13 +18,13 @@ Overview of Steps:
 
 #### Install Plugin as Dependency
 
-```shell
+```sh
 npm install -D gatsby-plugin-pagenv
 ```
 
 or
 
-```shell
+```sh
 yarn add -D gatsby-plugin-pagenv
 ```
 
@@ -32,13 +32,13 @@ yarn add -D gatsby-plugin-pagenv
 
 The development `.env` file is required as a base.
 
-```shell
+```sh
 MY_ENV_VAR=devValue
 ```
 
 From there, you will likely want to create a separate `.env.*` file where \* is the name of your other environment. Such as `.env.staging`.
 
-```shell
+```sh
 MY_ENV_VAR=stagingValue
 ```
 
@@ -102,7 +102,7 @@ By default, pagenv looks at the `ENVIRONMENT` env variable.
 
 eg:
 
-```shell
+```sh
 ENVIRONMENT=staging yarn build
 ```
 
@@ -110,7 +110,7 @@ If you would like to change the env variable name that pagenv looks for you can 
 
 eg:
 
-```shell
+```sh
 PAGENV_ENVIRONMENT_VAR=DEPLOY_ENV DEPLOY_ENV=staging yarn build
 ```
 
