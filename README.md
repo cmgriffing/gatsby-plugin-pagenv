@@ -18,13 +18,13 @@ Overview of Steps:
 
 #### Install Plugin as Dependency
 
-```
+```shell
 npm install -D gatsby-plugin-pagenv
 ```
 
 or
 
-```
+```shell
 yarn add -D gatsby-plugin-pagenv
 ```
 
@@ -32,13 +32,13 @@ yarn add -D gatsby-plugin-pagenv
 
 The development `.env` file is required as a base.
 
-```
+```shell
 MY_ENV_VAR=devValue
 ```
 
 From there, you will likely want to create a separate `.env.*` file where \* is the name of your other environment. Such as `.env.staging`.
 
-```
+```shell
 MY_ENV_VAR=stagingValue
 ```
 
@@ -95,6 +95,24 @@ export const pageQuery = graphql`
 ## Available options
 
 - **allowedVariables**: _String[]_ - an array of the ENV variables you would like to be grabbed from process.env
+
+## Passing Environment
+
+By default, pagenv looks at the `ENVIRONMENT` env variable.
+
+eg:
+
+```shell
+ENVIRONMENT=staging yarn build
+```
+
+If you would like to change the env variable name that pagenv looks for you can do so with `PAGENV_ENVIRONMENT_VAR`.
+
+eg:
+
+```shell
+PAGENV_ENVIRONMENT_VAR=DEPLOY_ENV DEPLOY_ENV=staging yarn build
+```
 
 ## When do I use this plugin?
 
