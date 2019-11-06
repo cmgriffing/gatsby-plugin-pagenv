@@ -3,6 +3,15 @@
   "description": "Inject ENV Vars into Gatsby pageQueries at build time.",
   "author": "Chris Griffing <cmgriffing@gmail.com> (http://chrisgriffing.com)",
   "version": "0.1.0",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "plugin",
+    "pagequery",
+    "env",
+    "vars"
+  ],
+  "repository": "github:cmgriffing/gatsby-plugin-pagenv",
   "scripts": {
     "build": "babel src --out-dir . --ignore **/__tests__",
     "prepare": "cross-env NODE_ENV=production npm run build",

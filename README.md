@@ -48,7 +48,7 @@ MY_ENV_VAR=stagingValue
 {
   plugins: {
     {
-      resolve: "gatsby-plugin-env-variable-injector",
+      resolve: "gatsby-plugin-pagenv",
       options: {
         allowedVariables: ["INDEX_LOGO_IMAGE"],
       },
