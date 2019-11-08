@@ -6,11 +6,6 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-/**
- * @injectedENV
- * @var:ENVIRONMENT
- */
-
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />

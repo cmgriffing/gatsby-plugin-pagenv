@@ -2,7 +2,7 @@
   "name": "gatsby-plugin-pagenv",
   "description": "Inject ENV Vars into Gatsby pageQueries at build time.",
   "author": "Chris Griffing <cmgriffing@gmail.com> (http://chrisgriffing.com)",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "license": "MIT",
   "keywords": [
     "gatsby",
@@ -17,7 +17,8 @@
   "scripts": {
     "build": "babel src --out-dir . --ignore **/__tests__",
     "prepare": "cross-env NODE_ENV=production npm run build",
-    "watch": "babel -w src --out-dir . --ignore **/__tests__"
+    "watch": "babel -w src --out-dir . --ignore **/__tests__",
+    "postinstall": "npm run prepare"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.3",

@@ -33,7 +33,16 @@ module.exports = {
         `/Users/cmgriffing/repos/gatsby-plugin-pagequery-preprocessor`
       ),
       options: {
-        allowedVariables: ["INDEX_LOGO_IMAGE"],
+        allowedVariables: [
+          {
+            key: "INDEX_LOGO_IMAGE",
+            type: "String", // Optional since String is default
+          },
+          {
+            key: "INDEX_LOGO_IMAGE_WIDTH",
+            type: "Int",
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

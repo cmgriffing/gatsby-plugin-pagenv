@@ -15,14 +15,29 @@ exports.onCreatePage = ({ page, actions, reporter }, configOptions) => {
       `Error: You must configure the allowedVariables for this plugin to work.`
     );
   }
-  const env = pick(process.env, configOptions.allowedVariables);
+
+  const mappedEnv = {};
+
+  configOptions.allowedVariables.map(allowedVariable => {
+    const key = allowedVariable.key;
+    let type = allowedVariable.type;
+    if (!type) {
+      type = "String";
+    }
+    if (type === "Int" || type === "Int!") {
+      mappedEnv[key] = +process.env[key];
+    } else {
+      mappedEnv[key] = process.env[key];
+    }
+  });
+
   const { createPage, deletePage } = actions;
 
   const oldPage = { ...page };
 
   page.context = {
     ...page.context,
-    ...env
+    ...mappedEnv
   };
 
   deletePage(oldPage);

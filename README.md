@@ -50,7 +50,16 @@ MY_ENV_VAR=stagingValue
     {
       resolve: "gatsby-plugin-pagenv",
       options: {
-        allowedVariables: ["INDEX_LOGO_IMAGE"],
+        allowedVariables: [
+          {
+            key: "INDEX_LOGO_IMAGE",
+            type: "String", // Optional since String is default
+          },
+          {
+            key: "INDEX_LOGO_IMAGE_WIDTH",
+            type: "Int",
+          },
+        ],
       },
     }
   }
@@ -66,9 +75,6 @@ You will pass the env variables you allowed into the query with a type annotatio
 ```graphql
 query ($INDEX_LOGO_IMAGE: String!)
 ```
-
-You can find out more about GraphQL types here:
-[https://graphql.org/learn/schema/#scalar-types](https://graphql.org/learn/schema/#scalar-types)
 
 Lastly, use the variable in your query somewhere:
 
@@ -94,7 +100,17 @@ export const pageQuery = graphql`
 
 ## Available options
 
-- **allowedVariables**: _String[]_ - an array of the ENV variables you would like to be grabbed from process.env
+- **allowedVariables**: _[]_ - an array of objects containing the ENV variables you would like to be grabbed from process.env and their scalar types
+
+```
+{
+  key: "INDEX_LOGO_IMAGE_WIDTH",
+  type: "Int",
+},
+```
+
+You can find out more about GraphQL types here:
+[https://graphql.org/learn/schema/#scalar-types](https://graphql.org/learn/schema/#scalar-types)
 
 ## Passing Environment
 
