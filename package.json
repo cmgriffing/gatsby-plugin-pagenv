@@ -2,7 +2,7 @@
   "name": "gatsby-plugin-pagenv",
   "description": "Inject ENV Vars into Gatsby pageQueries at build time.",
   "author": "Chris Griffing <cmgriffing@gmail.com> (http://chrisgriffing.com)",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "keywords": [
     "gatsby",
@@ -32,7 +32,7 @@
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "babel-preset-gatsby-package": "^0.2.9",
-    "cross-env": "^5.2.1",
+    "cross-env": "^6.0.3",
     "dotenv": "^8.2.0"
   },
   "engines": {
