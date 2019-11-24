@@ -33,12 +33,8 @@ exports.onCreatePage = ({ page, actions, reporter }, configOptions) => {
 
   const { createPage, deletePage } = actions;
 
-  const oldPage = { ...page };
-
-  page.context = {
-    ...page.context,
-    ...mappedEnv
-  };
+  const oldPage = Object.assign({}, page);
+  page.context = Object.assign({}, page.context, mappedEnv);
 
   deletePage(oldPage);
   createPage(page);

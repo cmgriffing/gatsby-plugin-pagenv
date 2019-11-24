@@ -2,7 +2,7 @@
   "name": "gatsby-plugin-pagenv",
   "description": "Inject ENV Vars into Gatsby pageQueries at build time.",
   "author": "Chris Griffing <cmgriffing@gmail.com> (http://chrisgriffing.com)",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "MIT",
   "keywords": [
     "gatsby",
@@ -16,7 +16,7 @@
   "repository": "github:cmgriffing/gatsby-plugin-pagenv",
   "scripts": {
     "build": "babel src --out-dir . --ignore **/__tests__",
-    "prepare": "cross-env NODE_ENV=production npm run build",
+    "prepare": "NODE_ENV=production npm run build",
     "watch": "babel -w src --out-dir . --ignore **/__tests__",
     "postinstall": "npm run prepare"
   },
@@ -33,12 +33,24 @@
     "@babel/core": "^7.6.4",
     "babel-preset-gatsby-package": "^0.2.9",
     "cross-env": "^6.0.3",
-    "dotenv": "^8.2.0"
+    "cz-conventional-changelog": "3.0.2",
+    "dotenv": "^8.2.0",
+    "husky": "^3.1.0"
   },
   "engines": {
     "node": ">=8.0.0"
   },
   "peerDependencies": {
     "gatsby": "^2.12.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
   }
 }
